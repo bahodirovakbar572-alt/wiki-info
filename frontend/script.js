@@ -1,5 +1,5 @@
 let currentSearchResults = [];
-const API_BASE_URL = 'https://wiki-uzb.onrender.com';
+const API_BASE_URL = 'https://wiki-info.onrender.com';
 
 function apiUrl(path) {
     return `${API_BASE_URL.replace(/\/+$/, '')}/${path.replace(/^\/+/, '')}`;
