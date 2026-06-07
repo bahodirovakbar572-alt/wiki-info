@@ -1,4 +1,5 @@
 let currentSearchResults = [];
+const API_BASE_URL = 'https://wiki-info.onrender.com/';
 
 document.addEventListener('DOMContentLoaded', () => {
     setupSearchListener();
@@ -22,7 +23,7 @@ function setupSearchListener() {
 
 async function searchWiki(query) {
     try {
-        const response = await fetch(`/api/wiki/search?q=${encodeURIComponent(query)}`);
+        const response = await fetch(`${API_BASE_URL}/api/wiki/search?q=${encodeURIComponent(query)}`);
         const data = await response.json();
         if (!response.ok) {
             console.error('Xato:', data.error || 'Qidiruvda xato');
@@ -73,7 +74,7 @@ function clearSearchResults() {
 
 async function showDetail(title) {
     try {
-        const response = await fetch(`/api/wiki/page?title=${encodeURIComponent(title)}`);
+        const response = await fetch(`${API_BASE_URL}/api/wiki/page?title=${encodeURIComponent(title)}`);
         const data = await response.json();
         if (!response.ok) {
             console.error('Xato:', data.error || 'Sahifa ko\'rsatishda xato');
