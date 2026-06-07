@@ -1,5 +1,5 @@
 let currentSearchResults = [];
-const API_BASE_URL = 'https://wiki-info.onrender.com';
+const API_BASE_URL = '';
 
 function apiUrl(path) {
     return `${API_BASE_URL.replace(/\/+$/, '')}/${path.replace(/^\/+/, '')}`;
@@ -160,4 +160,3 @@ function displayDetail(name, content) {
         </div>
     `;
 }
-
