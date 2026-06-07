@@ -5,7 +5,12 @@ require('dotenv').config();
 const fetch = require('node-fetch');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type'],
+}));
+app.options('*', cors());
 const PORT = process.env.PORT || 3300;
 const WIKI_API_URL = process.env.WIKI_API_URL || `https://${process.env.WIKI_LANG || 'en'}.wikipedia.org/w/api.php`;
 
